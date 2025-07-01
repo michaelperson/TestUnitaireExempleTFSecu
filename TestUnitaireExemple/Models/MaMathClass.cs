@@ -22,9 +22,9 @@ namespace TestUnitaireExemple.Models
 
         private static Exception? CheckNumbers(int a, int b)
         {
-            if (a != int.MaxValue && b != int.MaxValue)
+            if (a == int.MaxValue || b == int.MaxValue)
                 return new TooLargeNumberException();
-            if (a > 0 && b > 0)
+            if (a < 0 || b < 0)
                 return new NegativeNumberException() ;
             return null;
         }
