@@ -27,18 +27,7 @@ namespace TestUnitaireexemple.Test
             //Assert
             Assert.Equal(7271, retour);
         }
-
-        [Fact]
-        public void AddTooLargeNumberTest() 
-        {
-            //Arrange
-            int a = int.MaxValue;
-            int b = 1;
-
-            //Act && //Assert
-            Assert.Throws<Exception>(() => MaMathClass.AddPositiveNumber(a, b));            
-        }
-
+ 
         [Fact]
         public void AddTooLargeANumberWithCorrectExceptionTest()
         {
@@ -86,6 +75,19 @@ namespace TestUnitaireexemple.Test
             int b = -2;
 
             Assert.Throws<NegativeNumberException>(() => MaMathClass.AddPositiveNumber(a, b));
+        }
+
+        [Fact]
+        public void AddNumberResultErrorTest()
+        {
+            //Arrange
+            int a = int.MaxValue-1;
+            int b = 10;
+
+            //Act
+            int retour = MaMathClass.AddPositiveNumber(a, b);
+            //Assert
+            Assert.Equal(-2147483640, retour);
         }
 
     }
