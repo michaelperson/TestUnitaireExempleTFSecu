@@ -6,6 +6,7 @@ namespace TestUnitaireexemple.Test
     public class MathTest
     {
         [Fact]
+        [Trait("Category","Sample")]
         public void AddPositiveNumberTest()
         {
             //Arrange
@@ -13,10 +14,11 @@ namespace TestUnitaireexemple.Test
             int b = 2;
             //Act
             int retour = MaMathClass.AddPositiveNumber(a, b);
-            //Assert
-            Assert.Equal(3, retour); 
+            //Assert 
+            Assert.Equal(3, retour);  
         }
         [Fact]
+        [Trait("Category", "Sample")]
         public void AddPositiveNumberOtherTest()
         {
             //Arrange
@@ -29,6 +31,7 @@ namespace TestUnitaireexemple.Test
         }
  
         [Fact]
+        [Trait("Category", "Sample")]
         public void AddTooLargeANumberWithCorrectExceptionTest()
         {
             //Arrange
@@ -39,6 +42,7 @@ namespace TestUnitaireexemple.Test
             Assert.Throws<TooLargeNumberException>(() => MaMathClass.AddPositiveNumber(a, b));
         }
         [Fact]
+        [Trait("Category", "Sample")]
 
         public void AddTooLargeBNumberWithCorrectExceptionTest()
         {
@@ -51,6 +55,7 @@ namespace TestUnitaireexemple.Test
         }
 
         [Fact]
+        [Trait("Category", "Sample")]
         public void AddNegativeATest()
         {
             int a = -1;
@@ -60,6 +65,7 @@ namespace TestUnitaireexemple.Test
         }
 
         [Fact]
+        [Trait("Category", "Sample")]
         public void AddNegativeBTest()
         {
             int a = 1;
@@ -69,6 +75,7 @@ namespace TestUnitaireexemple.Test
         }
 
         [Fact]
+        [Trait("Category", "Sample")]
         public void AddNegativeAAndBTest()
         {
             int a = -1;
@@ -78,6 +85,7 @@ namespace TestUnitaireexemple.Test
         }
 
         [Fact]
+        [Trait("Category", "Sample")]
         public void AddNumberResultErrorTest()
         {
             //Arrange
